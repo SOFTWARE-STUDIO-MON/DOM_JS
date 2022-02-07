@@ -10,7 +10,8 @@
     <div>
       <h2>My first javascript</h2>
       <button id="date_button">Click me to get Date</button>
-      <div style="padding-top: 2%" id="member">
+      <h1>My first javascript</h1>
+      <div id="member">
         <a href="#" style="text-decoration: none" id="member_link">Member</a>
       </div>
       <ul id="list_image"></ul>
@@ -37,7 +38,7 @@
           "background-color": "#123943",
         },
         {
-          color: "#00ffff",
+          color: "#ff00ff",
           "background-color": "#00ff00",
         },
         {
@@ -78,6 +79,16 @@
           member_div.removeChild(member_div.childNodes[3]);
           clicked = false;
         }
+      };
+
+      member_link.onmouseover = () => {
+        member_link.style.color = "#fcfcfc";
+        member_link.style.backgroundColor = "#9e9e9e";
+      };
+
+      member_link.onmouseout = () => {
+        member_link.style.color = "#000";
+        member_link.style.backgroundColor = "#fff";
       };
 
       const images = [
