@@ -1,133 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>
-      <h2>My first javascript</h2>
-      <button id="date_button">Click me to get Date</button>
-      <h1>My first javascript</h1>
-      <div id="member">
-        <a href="#" style="text-decoration: none" id="member_link">Member</a>
-      </div>
-      <ul id="list_image"></ul>
-      <div>
-        <img
-          id="image"
-          src="https://media.istockphoto.com/photos/freedom-chains-that-transform-into-birds-charge-concept-picture-id1322104312?b=1&k=20&m=1322104312&s=170667a&w=0&h=VQyPkFkMKmo0e4ixjhiOLjiRs_ZiyKR_4SAsagQQdkk="
-        />
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h2>My first javascript</h2>
+    <button id="date_button">Click me to get Date</button>
+    <h1>My first javascript</h1>
+    <div id="member">
+      <a href="#" style="text-decoration: none" id="member_link">Member</a>
     </div>
-    <script type="text/javascript">
-      const date_button = document.getElementById("date_button");
-      const member_div = document.getElementById("member");
-      const member_link = document.getElementById("member_link");
-      const list_image = document.getElementById("list_image");
-      const image = document.getElementById("image");
-      const templat = [
-        {
-          color: "#ffffff",
-          "background-color": "#000000",
-        },
-        {
-          color: "#fff00f",
-          "background-color": "#123943",
-        },
-        {
-          color: "#ff00ff",
-          "background-color": "#00ff00",
-        },
-        {
-          color: "#ffff00",
-          "background-color": "#ff0000",
-        },
-        {
-          color: "#ff000f",
-          "background-color": "#000fff",
-        },
-        {
-          color: "#fabdff",
-          "background-color": "#00ad00",
-        },
-      ];
-      let index = 0;
-      date_button.onclick = () => {
-        date_button.textContent = new Date();
-        date_button.style.color = templat[index]["color"];
-        date_button.style.backgroundColor = templat[index]["background-color"];
-        index = index >= 5 ? 0 : index + 1;
+    <ul id="list_image"></ul>
+    <div>
+      <img id="image"
+        src="https://media.istockphoto.com/photos/freedom-chains-that-transform-into-birds-charge-concept-picture-id1322104312?b=1&k=20&m=1322104312&s=170667a&w=0&h=VQyPkFkMKmo0e4ixjhiOLjiRs_ZiyKR_4SAsagQQdkk=" />
+    </div>
+  </div>
+  <script type="text/javascript">
+    const date_button = document.getElementById("date_button");
+    const member_div = document.getElementById("member");
+    const member_link = document.getElementById("member_link");
+    const list_image = document.getElementById("list_image");
+    const image = document.getElementById("image");
+    const templat = [
+      {
+        color: "#ffffff",
+        "background-color": "#000000",
+      },
+      {
+        color: "#fff00f",
+        "background-color": "#123943",
+      },
+      {
+        color: "#ff00ff",
+        "background-color": "#00ff00",
+      },
+      {
+        color: "#ffff00",
+        "background-color": "#ff0000",
+      },
+      {
+        color: "#ff000f",
+        "background-color": "#000fff",
+      },
+      {
+        color: "#fabdff",
+        "background-color": "#00ad00",
+      },
+    ];
+    let index = 0;
+    date_button.onclick = () => {
+      date_button.textContent = new Date();
+      date_button.style.color = templat[index]["color"];
+      date_button.style.backgroundColor = templat[index]["background-color"];
+      index = index >= 5 ? 0 : index + 1;
+    };
+
+    const members = ["Poomipat Chuealue", "Poompong Boondee", "3", "4", "5", "Surawit Yosaeng"]; //member name
+    const ul = document.createElement("ul");
+    members.map((member) => {
+      const li = document.createElement("li");
+      li.textContent = member;
+      ul.appendChild(li);
+    });
+
+    let clicked = false;
+    member_link.onclick = () => {
+      if (!clicked) {
+        member_div.appendChild(ul);
+        clicked = true;
+      } else {
+        member_div.removeChild(member_div.childNodes[3]);
+        clicked = false;
+      }
+    };
+
+    member_link.onmouseover = () => {
+      member_link.style.color = "#fcfcfc";
+      member_link.style.backgroundColor = "#9e9e9e";
+    };
+
+    member_link.onmouseout = () => {
+      member_link.style.color = "#000";
+      member_link.style.backgroundColor = "#fff";
+    };
+
+    const images = [
+      {
+        name: "ifel",
+        image:
+          "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+      },
+      {
+        name: "chain",
+        image:
+          "https://media.istockphoto.com/photos/freedom-chains-that-transform-into-birds-charge-concept-picture-id1322104312?b=1&k=20&m=1322104312&s=170667a&w=0&h=VQyPkFkMKmo0e4ixjhiOLjiRs_ZiyKR_4SAsagQQdkk=",
+      },
+      {
+        name: "water drop",
+        image:
+          "https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg",
+      },
+      {
+        name: "bird",
+        image:
+          "https://image.shutterstock.com/image-photo/picture-beautiful-view-birds-260nw-1836263689.jpg",
+      },
+    ];
+
+    images.map((img, index) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      li.setAttribute("link", img.image);
+      a.textContent = img.name;
+      li.appendChild(a);
+      list_image.appendChild(li);
+    });
+
+    list_image.childNodes.forEach((childNodes) => {
+      childNodes.onclick = () => {
+        image.setAttribute("src", childNodes.getAttribute("link"));
       };
+    });
+  </script>
+</body>
 
-      const members = ["Poomipat Chuealue", "Poompong Boondee", "3", "4", "5", "Surawit Yosaeng 62010986"]; //member name
-      const ul = document.createElement("ul");
-      members.map((member) => {
-        const li = document.createElement("li");
-        li.textContent = member;
-        ul.appendChild(li);
-      });
-
-      let clicked = false;
-      member_link.onclick = () => {
-        if (!clicked) {
-          member_div.appendChild(ul);
-          clicked = true;
-        } else {
-          member_div.removeChild(member_div.childNodes[3]);
-          clicked = false;
-        }
-      };
-
-      member_link.onmouseover = () => {
-        member_link.style.color = "#fcfcfc";
-        member_link.style.backgroundColor = "#9e9e9e";
-      };
-
-      member_link.onmouseout = () => {
-        member_link.style.color = "#000";
-        member_link.style.backgroundColor = "#fff";
-      };
-
-      const images = [
-        {
-          name: "ifel",
-          image:
-            "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
-        },
-        {
-          name: "chain",
-          image:
-            "https://media.istockphoto.com/photos/freedom-chains-that-transform-into-birds-charge-concept-picture-id1322104312?b=1&k=20&m=1322104312&s=170667a&w=0&h=VQyPkFkMKmo0e4ixjhiOLjiRs_ZiyKR_4SAsagQQdkk=",
-        },
-        {
-          name: "water drop",
-          image:
-            "https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg",
-        },
-        {
-          name: "bird",
-          image:
-            "https://image.shutterstock.com/image-photo/picture-beautiful-view-birds-260nw-1836263689.jpg",
-        },
-      ];
-
-      images.map((img, index) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        li.setAttribute("link", img.image);
-        a.textContent = img.name;
-        li.appendChild(a);
-        list_image.appendChild(li);
-      });
-
-      list_image.childNodes.forEach((childNodes) => {
-        childNodes.onclick = () => {
-          image.setAttribute("src", childNodes.getAttribute("link"));
-        };
-      });
-    </script>
-  </body>
 </html>
